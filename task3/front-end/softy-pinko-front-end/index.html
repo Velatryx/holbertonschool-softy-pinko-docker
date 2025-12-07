@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Softy Pinko</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-softy-pinko.css">
+
+    <!-- jQuery (required for AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="#" class="logo">
+                            <img src="assets/images/logo.png" alt="Softy Pinko">
+                        </a>
+                        <ul class="nav">
+                            <li><a href="#welcome" class="active">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#contact-us">Contact Us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Area -->
+    <div class="welcome-area" id="welcome">
+
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+
+                        <!-- REQUIRED BY TASK3 -->
+                        <h1 id="dynamic-content"></h1>
+
+                        <h1>We provide the best <strong>strategy</strong><br>to grow up your <strong>business</strong></h1>
+                        <a href="#features" class="main-button-slider">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Some existing HTML continues below… -->
+    <!-- Features, About, Contact, etc. remain unchanged -->
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Softy Pinko</p>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- REQUIRED BY TASK3: Ajax request to backend -->
+    <script>
+        // Fetch from backend (port 5252)
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5252/api/hello",
+                success: function (data) {
+                    console.log(data);
+                    $('#dynamic-content').text(data);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
